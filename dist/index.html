@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My first three.js app</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+    
+    <script type="module" crossorigin src="/assets/index-5c4c76d9.js"></script>
+    <link rel="stylesheet" href="/assets/index-78883382.css">
+  </head>
+  <body>
+    
+    <div id="scene"></div>
+    <div id="site">
+      <h1>La forêt aux projets</h1>
+      <div id="add-project">
+        <h2>Ajouter un projet</h2>
+        <form action="" method="post">
+          <fieldset>
+            <div>
+              <label for="title">Titre du projet</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="titre du projet"
+              />
+            </div>
+            <div>
+              <label for="maturity">Maturité du projet</label>
+              <select name="maturity" id="maturity">
+                <option value="small" selected="selected">
+                  Pouce (&lt; 1 an)
+                </option>
+                <option value="medium">Jeune (entre 1 an et 3 ans)</option>
+                <option value="big">Anscestral (&gt; 3 ans)</option>
+                <option value="dead">Mort (arrêté)</option>
+              </select>
+            </div>
+          </fieldset>
+          <input type="submit" value="ajouter" />
+        </form>
+      </div>
+      <div id="filters">
+        <h2>Filtres</h2>
+        <div>
+          <input type="checkbox" id="small" name="small" checked />
+          <label for="small">Pouce (&lt; 1 an)</label>
+        </div>
+        <div>
+          <input type="checkbox" id="medium" name="medium" checked />
+          <label for="medium">Jeune (entre 1 an et 3 ans)</label>
+        </div>
+        <div>
+          <input type="checkbox" id="big" name="big" checked />
+          <label for="big">Anscestral (&gt; 3 ans)</label>
+        </div>
+        <div>
+          <input type="checkbox" id="dead" name="dead" checked />
+          <label for="dead">Mort (arrêté)</label>
+        </div>
+        <div id="actions">
+          <a href="download" id="download">Exporter</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
