@@ -64,6 +64,7 @@ addProjectSubmit.addEventListener('click', function (event) {
     const projectMaturityValue = projectMaturity.options[projectMaturity.selectedIndex].value;
     loader.load(`images/${projectMaturityValue}.glb`, function (gltf) {
         let content = gltf.scene
+        console.log(content);
         scene.add(content);
 
         // content.position.setX(0)
@@ -81,6 +82,7 @@ addProjectSubmit.addEventListener('click', function (event) {
             content.position.z = 1
         }
         const project = {
+            id: content.id,
             title: document.querySelector("#add-project #title").value,
             maturity: projectMaturityValue,
             x: content.position.x,
@@ -107,4 +109,31 @@ function canBePlaced(projects, x, z) {
         }
     });
     return true
+}
+
+const filterSmall = document.getElementById('small')
+const filterMedium = document.getElementById('medium')
+const filterBig = document.getElementById('big')
+const filterDead = document.getElementById('dead')
+
+filterDead.addEventListener('click', () => updateVisibility("dead"))
+
+filterSmall.addEventListener('click', () => updateVisibility("small"))
+
+filterMedium.addEventListener('click', () => updateVisibility("medium"))
+
+filterBig.addEventListener('click', () => updateVisibility("big"))
+
+function updateVisibility(visibility) {
+    if (localStorage.getItem("projects")) {
+        let projects = JSON.parse(localStorage.getItem('projects'))
+        projects.forEach(project => {
+            if (project.maturity == visibility) {
+                let object = scene.getObjectById( project.id )
+                console.log(project.id);
+                console.log(object);
+                object.visible = !object.visible
+            }
+        });
+    }
 }

@@ -13,7 +13,7 @@ h1 {
   width: 100%;
 }
 
-#add-project {
+#add-project, #filters {
   position: absolute;
   background: #fff8;
   top: 20vh;
@@ -50,4 +50,8 @@ h1 {
     border: none;
     border-radius: 15px;
     padding: 10px 0;
+}
+
+#filters {
+    right: 60px;
 }
