@@ -55,3 +55,22 @@ h1 {
 #filters {
     right: 60px;
 }
+
+#actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#actions a {
+    background-color: #8fbc8f;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+#actions input {
+    display: none;
+}
