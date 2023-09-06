@@ -1,0 +1,53 @@
+#site {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 20px;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+h1 {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+}
+
+#add-project {
+  position: absolute;
+  background: #fff8;
+  top: 20vh;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+#add-project fieldset, #add-project fieldset > div{
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#add-project fieldset > div {
+    margin: 15px 0;
+}
+
+#add-project fieldset > div input, #add-project fieldset > div select {
+    margin: 15px 0;
+    padding: 5px;
+    border-color: #c1d4c1;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+#add-project fieldset > div select {
+    background-color: white;
+}
+
+#add-project input[type="submit"] {
+    width: 100%;
+    background-color: #8fbc8f;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 0;
+}

@@ -6,8 +6,34 @@
 		<style>
 			body { margin: 0; }
 		</style>
+        <link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<script type="module" src="/main.js"></script>
+        <div id="scene"></div>
+        <div id="site">
+            <h1>La forêt aux projets</h1>
+            <div id="add-project">
+                <h2>Ajouter un projet</h2>
+                <form action="" method="post">
+                    <fieldset>
+                        <div>
+                            <label for="title">Titre du projet</label>
+                            <input type="text" name="title" id="title" placeholder="titre du projet">
+                        </div>
+                        <div>
+                            <label for="maturity">Maturité du projet</label>
+                            <select name="maturity" id="maturity">
+                                <option value="small" selected="selected">Pouce (&lt; 1 an)</option>
+                                <option value="medium">Jeune (entre 1 an et 3 ans)</option>
+                                <option value="big">Anscestral (&gt; 3 ans)</option>
+                                <option value="dead">Mort (arrêté)</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="ajouter" >
+                </form> 
+            </div>
+        </div>
 	</body>
 </html>
