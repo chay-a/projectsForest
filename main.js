@@ -137,3 +137,20 @@ function updateVisibility(visibility) {
         });
     }
 }
+
+const download = document.getElementById('download')
+
+download.addEventListener('click', function (event) {
+    event.preventDefault()
+    let projects = []
+    if (localStorage.getItem("projects")) {
+        projects = JSON.parse(localStorage.getItem('projects'))
+    }
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(projects));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href",     dataStr);
+    downloadAnchorNode.setAttribute("download", "projectsForest.json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+})
